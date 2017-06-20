@@ -1,0 +1,147 @@
+<section ng-controller="sortAlgoController">
+
+
+
+
+	<div class="container">
+		<h3>{{page.heading}}</h3>
+
+		<div class="alert alert-danger" ng-show="showErrorMsg">Please
+			enter minimum two valid integer number to do sorting.</div>
+
+
+
+		<div class="row" ng-hide="processAgain">
+
+			<div class="col-sm-12 ">
+				<div class="alert alert-info">Please enter atleast two Integer number
+					separated by new line without and blank spaces.</div>
+			</div>
+
+
+
+		</div>
+
+		<div class="row" ng-show="processAgain">
+
+			<div class="col-sm-12 ">
+				<div class="alert alert-success">Given Random Number sorted.
+					Number of position changed: {{sortingResult.noOfSwapOperations}},
+					Time taken :{{sortingResult.processingMiliSeconds}} (Milliseconds)</div>
+			</div>
+
+
+
+		</div>
+
+
+	</div>
+
+	<div class="row" style="padding-left:15px" >
+		<div class="col-sm-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Random Numbers</div>	
+				<div class="panel-body">
+
+					<textarea ng-disabled="processAgain" ng-model="randomNumberList"
+						rows="{{maxRows()}}" ng-list="&#10;" ng-trim="false"></textarea>
+					<div class="row" style="padding-left: 20px">
+
+						<button class="btn btn-primary" ng-click="sortNumbers()"
+							ng-hide="processAgain" ng-disabled="!validateNumbers()">Sort
+							Numbers !</button>
+						<button class="btn btn-primary" ng-click="resetNumbers()"
+							ng-hide="processAgain">Reset</button>
+						<button class="btn btn-primary" ng-click="resetNumbers()"
+							ng-show="processAgain">Process Again</button>
+						<a href="#!/sortHistory">	<button class="btn btn-primary" ng-click="resetNumbers()"
+							ng-show="processAgain"     >Goto History</button></a>
+
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+		<div class="col-sm-4">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Entered Numbers</div>
+				<div class="panel-body">
+
+					<div class="table-responsive" ng-show="randomNumberList.length>0">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Number</th>
+									<th>Status</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="number in randomNumberList track by $index">
+									<td>{{$index+1}}</td>
+									<td>{{number}}</td>
+									<td>
+										<div class="alert alert-danger" ng-hide="isInteger(number)">
+											<strong>Invalid Integer !</strong>
+										</div>
+									</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+
+				</div>
+			</div>
+
+
+
+		</div>
+		<div class="col-sm-4">
+
+
+			<div class="panel panel-default" ng-show="sortedNumberList.length>0">
+				<div class="panel-heading">Sorted Numbers</div>
+				<div class="panel-body">
+
+					<div class="table-responsive" ng-show="sortedNumberList.length>0">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Number</th>
+
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="number in sortedNumberList track by $index">
+									<td>{{$index+1}}</td>
+									<td>{{number}}</td>
+
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</section>

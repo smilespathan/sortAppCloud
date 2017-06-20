@@ -1,0 +1,54 @@
+<section ng-controller="sortHistoryController">
+
+
+
+	<div class="container">
+		<h3>{{page.heading}}</h3>
+		
+		
+	<div class="panel panel-primary" style="overflow:auto">
+      <div class="panel-heading">History Data </div>
+      <div class="panel-body">
+      
+      	<table class="table" ng-show="sortHistory.length>0">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Created Date</th>
+									<th>Position Change</th>
+									<th>Processing Time(Milliseconds)</th>
+									<th >Random Numbers</th>
+									<th > Sorted Numbers</th>
+
+								</tr>
+							</thead>
+							<tbody  ng-repeat="history in sortHistory track by $index">
+								<tr >
+									<td>{{history.id}}</td>
+									<td>{{history.createdDate}}</td>
+									<td>{{history.noOfSwapOperations}}</td>
+									<td>{{history.processingMiliSeconds}}</td>
+									<td>{{history.randomNumbers}}</td>
+									<td>{{history.sortedNumbers}}</td>
+									
+
+								</tr>
+							</tbody>
+						</table>
+						<table class="table" ng-hide="sortHistory.length>0">
+							<thead>
+								<tr>
+									
+									<th>No records available</th>
+								
+
+								</tr>
+							</thead>
+							
+						</table>
+					</div>
+      
+      </div>
+    </div>
+		</div>
+</section>

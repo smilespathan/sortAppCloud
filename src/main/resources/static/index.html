@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="scripts/lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/sticky-footer.css" />
+<link rel="stylesheet" href="styles/app.css" />
+<script type="text/javascript" src="scripts/require.js"
+	data-main="scripts/bootstrap.js"></script>
+
+<title>Sort App</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Sort App</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="#!">Home</a></li>
+				<li><a href="#!/sortAlgo">Sorting</a></li>
+				<li><a href="#!/sortHistory">History</a></li>
+			
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content Container -->
+	<div id="main" class="container" ng-view></div>
+
+	<div id="push"></div>
+	
+	
+<div  class='globalAjaxLoaderDiv' style="width:170px;margin-left:-75px;top:200px;height:50px;left:50%;position:fixed;z-index:100001;display:none;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdf3', endColorstr='#fdf5ca');
+	/*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/table_separator.png');  IE6-9 */; /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#fffdf3), to(#fdf5ca)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #fffdf3,  #fdf5ca);/*  for firefox 3.6+ */
+	border: 1px solid #c0a767;
+	vertical-align: middle;
+	padding-top: 10px;
+	color:#5f4628;
+">&nbsp;&nbsp;
+<img
+							src="scripts/lib/bootstrap/img/ajax-loader.gif" />&nbsp;&nbsp;&nbsp;&nbsp;Processing...
+</div>
+	
+
+	<div id="footer">
+		<div class="container"></div>
+	</div>
+
+
+
+</body>
+</html>
